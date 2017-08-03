@@ -1,0 +1,13 @@
+html(lang="en")
+  head
+    title= login
+    meta(name='viewport', content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;')
+    link(rel='stylesheet', href='/stylesheets/login.css')
+  body
+    div.login
+      form(method='POST', action='/upload')
+        input.input(type='password', placeholder='token', name='token')
+        br
+        button.btn(type='submit') Log in
+    
+      
