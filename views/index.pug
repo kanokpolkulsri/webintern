@@ -6,18 +6,93 @@ html(lang="en")
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+    script(src='https://code.jquery.com/jquery-2.2.0.min.js')
+    script(src='https://code.jquery.com/jquery-1.12.0.min.js')
   body
-    div.container
-      table.table.table-bordered
-        thead
-          tr
-            th.row-center Company's name
-            th.row-center link
-        tbody.row-data
-          //- example to add data into the table
-          //- tr
-          //-   td 1
-          //-   td.row-center 
-          //-     button.btn.link-location(type='submit')
-          //-       a.link-location(href="http://www.google.com") click
-    
+    input#tab1(type='radio', name='tabs')
+    label(for='tab1') HOME PAGE
+    input#tab2(type='radio', name='tabs', checked)
+    label(for='tab2') Computer Engineering
+    input#tab3(type='radio', name='tabs')
+    label(for='tab3') Software Engineering
+    input#tab4(type='radio', name='tabs')
+    label(for='tab4') Places Internships
+    part#content1
+      div.wrapper
+        div#admin
+          input.input.show.information(type='text', placeholder='ข่าวสารข้อมูล...')
+          input.input.show.link(type='text', placeholder='ลิงค์เว็บไซต์...')
+          button.input.show.button เพิ่ม
+          br
+          input.input.show.namedelete(text='text', placeholder='หัวข้อที่ต้องการจะลบ...')
+          button.input.show.button ลบ
+        div.table
+          div.row.header.blue
+            div.cell.center ข่าวสารข้อมูล
+            div.cell.link.center link
+          //- div.row
+          //-   div.cell 1
+          //-   div.cell
+          //-     button.btn.link
+          //-       a(href='#') click
+    part#content2
+      div.wrapper
+        div#admin
+          input.input.show.cpe(type='text', value='CPE', readonly)
+          input.input.show.year(type='text', placeholder='2560...')
+          input.input.show.choosefile#file-cpe(type='file', name='file', )
+          button.input.show.upload upload
+        div.table
+          div.row.header.blue
+            div.cell.center รหัสนิสิต
+            div.cell.center ชื่อ-นามสกุล
+            div.cell.center สถานประกอบการ
+            div.cell.center วันเริ่มงาน
+            div.cell.center วันสิ้นสุดงาน
+          //- div.row
+          //-   div.cell a1
+          //-   div.cell a2
+          //-   div.cell a3
+          //-   div.cell a4
+          //-   div.cell a5
+    part#content3
+      div.wrapper
+        div#admin
+          input.input.show.ske(type='text', value='SKE', readonly)
+          input.input.show.year(type='text', placeholder='2560...')
+          input.input.show.choosefile#file-cpe(type='file', name='file', )
+          button.input.show.upload upload
+        div.table
+          div.row.header.blue
+            div.cell.center รหัสนิสิต
+            div.cell.center ชื่อ-นามสกุล
+            div.cell.center สถานประกอบการ
+            div.cell.center วันเริ่มงาน
+            div.cell.center วันสิ้นสุดงาน
+          //- div.row
+          //-   div.cell a1
+          //-   div.cell a2
+          //-   div.cell a3
+          //-   div.cell a4
+          //-   div.cell a5
+    part#content4
+      div.wrapper
+        div#admin
+          input.input.show.information(type='text', placeholder='สถานที่ฝึกงาน...')
+          input.input.show.link(type='text', placeholder='ลิงค์เว็บไซต์...')
+          button.input.show.button เพิ่ม
+          br
+          input.input.show.namedelete(text='text', placeholder='สถานที่ที่ต้องการจะลบ...')
+          button.input.show.button ลบ
+        div.table
+          div.row.header.blue
+            div.cell.center ชื่อสถานที่ฝึกงาน
+            div.cell.link.center link
+          div.row
+            div.cell 1
+            div.cell
+              button.btn.link
+                a(href='#') click
+                
+    //- div.footer
