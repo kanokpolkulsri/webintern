@@ -63,10 +63,10 @@ label:before {
   margin-right: 10px;
 }
 
-label[for*='1']:before { content: '\f1cb'; }
-label[for*='2']:before { content: '\f17d'; }
-label[for*='3']:before { content: '\f16b'; }
-label[for*='4']:before { content: '\f1a9'; }
+label[for*='1']:before { content: '\f0c0'; }
+label[for*='2']:before { content: '\f1b2'; }
+label[for*='3']:before { content: '\f1ce'; }
+label[for*='4']:before { content: '\f124'; }
 
 label:hover {
   color: #888;
@@ -163,11 +163,16 @@ input:checked + label {
   max-width: 200px;
 }
 
+.topic {
+  text-align: center;
+  font: 35px/1 'Open Sans', sans-serif;
+}
+
 /*.footer {
   width: 100%;
-  height: 200px;
-  background-color: #000;
-  position: absolute;
+  height: 100px;
+  background-color: #007ebc;
+  position: relative;
   left: 0;
   right: 0;
   bottom: 0;
