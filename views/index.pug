@@ -10,9 +10,9 @@ html(lang="en")
     script(src='https://code.jquery.com/jquery-2.2.0.min.js')
     script(src='https://code.jquery.com/jquery-1.12.0.min.js')
   body
-    input#tab1(type='radio', name='tabs')
+    input#tab1(type='radio', name='tabs', checked)
     label(for='tab1') HOME PAGE
-    input#tab2(type='radio', name='tabs', checked)
+    input#tab2(type='radio', name='tabs')
     label(for='tab2') Computer Engineering
     input#tab3(type='radio', name='tabs')
     label(for='tab3') Software Engineering
@@ -26,17 +26,18 @@ html(lang="en")
           input.input.show.link(type='text', placeholder='ลิงค์เว็บไซต์...')
           button.input.show.button เพิ่ม
           br
-          input.input.show.namedelete(text='text', placeholder='หัวข้อที่ต้องการจะลบ...')
-          button.input.show.button ลบ
         div.table
           div.row.header.blue
             div.cell.center ข่าวสารข้อมูล
             div.cell.link.center link
-          //- div.row
-          //-   div.cell 1
-          //-   div.cell
-          //-     button.btn.link
-          //-       a(href='#') click
+            div.cell.delete#admin id
+          div.row
+            div.cell 1
+            div.cell
+              button.btn.link
+                a(href='#') click
+            div.cell.delete#admin
+              button click
     part#content2
       div.topic Computer Engineering
       div.wrapper
@@ -52,12 +53,18 @@ html(lang="en")
             div.cell.center สถานประกอบการ
             div.cell.center วันเริ่มงาน
             div.cell.center วันสิ้นสุดงาน
-          //- div.row
-          //-   div.cell a1
-          //-   div.cell a2
-          //-   div.cell a3
-          //-   div.cell a4
-          //-   div.cell a5
+          div.row
+            div.cell a1
+            div.cell a2
+            div.cell a3
+            div.cell a4
+            div.cell a5
+          div.row
+            div.cell a1
+            div.cell a2
+            div.cell a3
+            div.cell a4
+            div.cell a5
         //- br
         //- div.listyear ปีการศึกษา
         //-   ul
@@ -113,64 +120,5 @@ html(lang="en")
           //-   div.cell
           //-     button.btn.link
           //-       a(href='#') click
-          
-          
-          //- div.row
-          //-   div.cell 1
-          //-   div.cell 2
-          //- div.row
-          //-   div.cell 1
-          //-   div.cell 2
-          //- div.row
-          //-   div.cell 1
-          //-   div.cell 2
-          //- div.row
-          //-   div.cell 1
-          //-   div.cell 2
-          //- div.row
-          //-   div.cell 1
-          //-   div.cell 2
-          //- div.row
-          //-   div.cell 1
-          //-   div.cell 2
-          //-   
-          //- div.row
-          //-   div.cell 1
-          //-   div.cell 2
-          //- div.row
-          //-   div.cell 1
-          //-   div.cell 2
-          //- div.row
-          //-   div.cell 1
-          //-   div.cell 2
-          //- div.row
-          //-   div.cell 1
-          //-   div.cell 2
-          //- div.row
-          //-   div.cell 1
-          //-   div.cell 2
-          //- div.row
-          //-   div.cell 1
-          //-   div.cell 2
-          //-   
-          //- div.row
-          //-   div.cell 1
-          //-   div.cell 2
-          //- div.row
-          //-   div.cell 1
-          //-   div.cell 2
-          //- div.row
-          //-   div.cell 1
-          //-   div.cell 2
-          //- div.row
-          //-   div.cell 1
-          //-   div.cell 2
-          //- div.row
-          //-   div.cell 1
-          //-   div.cell 2
-          //- div.row
-          //-   div.cell 1
-          //-   div.cell 2
-            
                 
-    //- div.footer
+    div.footer

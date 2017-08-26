@@ -1,84 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-/*header menu*/
-*, *:before, *:after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100vh;
-}
-
-body {
-  font: 14px/1 'Open Sans', sans-serif;
-  color: #555;
-  background: #eee;
-}
-
-h1 {
-  padding: 50px 0;
-  font-weight: 400;
-  text-align: center;
-}
-
-p {
-  margin: 0 0 20px;
-  line-height: 1.5;
-}
-
-main {
-  min-width: 320px;
-  max-width: 800px;
-  padding: 50px;
-  margin: 0 auto;
-  background: #fff;
-}
-
-part {
-  display: none;
-  padding: 20px 0 0;
-  border-top: 1px solid #ddd;
-  margin-top: -4px;
-}
-
-input {
-  display: none;
-}
-
-label {
-  display: inline-block;
-  margin: 0 0 -1px;
-  padding: 15px 25px;
-  font-weight: 600;
-  text-align: center;
-  color: #bbb;
-  border: 1px solid transparent;
-}
-
-label:before {
-  font-family: fontawesome;
-  font-weight: normal;
-  margin-right: 10px;
-}
+/*theme menu*/
+input,part{display:none}
+h1,label{text-align:center}
+*,:after,:before{margin:0;padding:0;box-sizing:border-box}
+body,html{height:100vh}
+body{font:14px/1 'Open Sans',sans-serif;color:#555;background:#eee}
+h1{padding:50px 0;font-weight:400}
+p{margin:0 0 20px;line-height:1.5}
+main{min-width:320px;max-width:800px;padding:50px;margin:0 auto;background:#fff}
+part{padding:20px 0 0;border-top:1px solid #ddd;margin-top:-4px}
+label{display:inline-block;margin:0 0 -1px;padding:15px 25px;font-weight:600;color:#bbb;border:1px solid transparent}
+label:before{font-family:fontawesome;font-weight:400;margin-right:10px}
 
 label[for*='1']:before { content: '\f0c0'; }
 label[for*='2']:before { content: '\f1b2'; }
 label[for*='3']:before { content: '\f1ce'; }
 label[for*='4']:before { content: '\f124'; }
 
-label:hover {
-  color: #888;
-  cursor: pointer;
-}
-
-input:checked + label {
-  color: #555;
-  border: 1px solid #ddd;
-  border-top: 3px solid #2980b9;
-  border-bottom: 1px solid #fff;
-}
+label:hover{color:#888;cursor:pointer}
+input:checked+label{color:#555;border:1px solid #ddd;border-top:3px solid #2980b9;border-bottom:1px solid #fff}
 
 #tab1:checked ~ #content1,
 #tab2:checked ~ #content2,
@@ -88,63 +29,34 @@ input:checked + label {
 }
 
 @media screen and (max-width: 803px) {
-  label {
-    font-size: 0;
-  }
-  label:before {
-    margin: 0;
-    font-size: 18px;
-  }
+  label{font-size:0}
+  label:before{margin:0;font-size:18px}
 }
 
 @media screen and (max-width: 400px) {
-  label {
-    padding: 15px;
-  }
+  label{padding: 15px;}
 }
 
-.wrapper {
-  margin: 0 auto;
-  padding: 40px;
-  max-width: 1200px;
+@media screen and (max-width: 556px) {
+  #content2 .row.header.blue{display: block;margin: 0 0 0 0;width: 100%;}
+  #content2 .table{display: inline-block;width: 100%;background-color: #000;}
+  #content2 .cell.center{text-align:left}
+  #content2 .row{margin:0;display:block}
+  #content2 .cell{display:block}
+  #content3 .row.header.blue{display: block;margin: 0 0 0 0;width: 100%;}
+  #content3 .table{display: inline-block;width: 100%;background-color: #000;}
+  #content3 .cell.center{text-align:left}
+  #content3 .row{margin:0;display:block}
+  #content3 .cell{display:block}
 }
 
-.table {
-  margin: 0 auto;
-  width: 70%;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  display: table;
-}
-
-.row {
-  display: table-row;
-  background: #f6f6f6;
-}
-
-.row:nth-of-type(odd) {
-  background: #e9e9e9;
-}
-
-.row.header {
-  font-weight: 900;
-  width: 100%;
-  color: #ffffff;
-  background: #ea6153;
-}
-
-.row.green {
-  background: #27ae60;
-}
-
-.row.blue {
-  background: #2980b9;
-}
-
-.cell {
-  padding: 6px 12px;
-  display: table-cell;
-  max-width: 100%;
-}
+.wrapper{margin:0 auto;padding:40px;max-width:1200px}
+.table{margin:0 auto;width:70%;box-shadow:0 1px 3px rgba(0,0,0,.2);display:table}
+.row{display:table-row;background:#f6f6f6}
+.row:nth-of-type(odd){background:#e9e9e9}
+.row.header{font-weight:900;width:100%;color:#fff;background:#ea6153}
+.row.green{background:#27ae60}.row.blue{background:#2980b9}
+.cell{padding:6px 12px;display:table-cell;max-width:100%}
 
 /*theme*/
 .cell.link {
@@ -179,6 +91,12 @@ input:checked + label {
 }*/
 
 /*part1*/
+
+.cell.delete {
+  width: 50px;
+  text-align: center;
+}
+
 .input.show {
   display: inline-block;
   float: left;
