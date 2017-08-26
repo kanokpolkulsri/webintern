@@ -36,8 +36,14 @@ html(lang="en")
             div.cell
               button.btn.link
                 a(href='#') click
-            div.cell.delete#admin
+            div.cell.btn.delete#admin
               button click
+        div.listyear ปีการศึกษา
+          ul
+            li
+              a(href='#') 2557
+            li
+              a(href='#') 2558 
     part#content2
       div.topic Computer Engineering
       div.wrapper
@@ -66,12 +72,12 @@ html(lang="en")
             div.cell a4
             div.cell a5
         //- br
-        //- div.listyear ปีการศึกษา
-        //-   ul
-        //-     li
-        //-       a(href='#') 2557
-        //-     li
-        //-       a(href='#') 2558 
+        div.listyear ปีการศึกษา
+          ul
+            li
+              a(href='#') 2557
+            li
+              a(href='#') 2558 
           
     part#content3
       div.topic Software engineering
@@ -95,12 +101,12 @@ html(lang="en")
           //-   div.cell a4
           //-   div.cell a5
         //- br
-        //- div.listyear ปีการศึกษา
-        //-   ul
-        //-     li
-        //-       a(href='#') 2557
-        //-     li
-        //-       a(href='#') 2558
+        div.listyear ปีการศึกษา
+          ul
+            li
+              a(href='#') 2557
+            li
+              a(href='#') 2558
     part#content4
       div.topic Places internships
       div.wrapper
@@ -108,17 +114,23 @@ html(lang="en")
           input.input.show.information(type='text', placeholder='สถานที่ฝึกงาน...')
           input.input.show.link(type='text', placeholder='ลิงค์เว็บไซต์...')
           button.input.show.button เพิ่ม
-          br
-          input.input.show.namedelete(text='text', placeholder='สถานที่ที่ต้องการจะลบ...')
-          button.input.show.button ลบ
         div.table
           div.row.header.blue
             div.cell.center ชื่อสถานที่ฝึกงาน
             div.cell.link.center link
-          //- div.row
-          //-   div.cell 1
-          //-   div.cell
-          //-     button.btn.link
-          //-       a(href='#') click
+            div.cell.delete#admin id
+          div.row
+            div.cell 1
+            div.cell
+              button.btn.link
+                a(href='#') click
+            div.cell.btn.delete#admin
+              button click
+        div.listyear ปีการศึกษา
+          ul
+            li
+              a(href='#') 2557
+            li
+              a(href='#') 2558 
                 
     div.footer

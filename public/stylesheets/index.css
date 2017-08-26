@@ -73,11 +73,16 @@ input:checked+label{color:#555;border:1px solid #ddd;border-top:3px solid #2980b
 .btn.link {
   width: 100%;
   max-width: 200px;
+  background: transparent;
 }
 
 .topic {
   text-align: center;
   font: 35px/1 'Open Sans', sans-serif;
+}
+
+.btn.delete {
+  background: red;
 }
 
 /*.footer {
@@ -91,7 +96,6 @@ input:checked+label{color:#555;border:1px solid #ddd;border-top:3px solid #2980b
 }*/
 
 /*part1*/
-
 .cell.delete {
   width: 50px;
   text-align: center;
@@ -101,7 +105,7 @@ input:checked+label{color:#555;border:1px solid #ddd;border-top:3px solid #2980b
   display: inline-block;
   float: left;
   height: 30px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .input.show.information {
