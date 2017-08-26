@@ -82,7 +82,7 @@ input:checked+label{color:#555;border:1px solid #ddd;border-top:3px solid #2980b
 }
 
 .btn.delete {
-  background: red;
+  background: transparent;
 }
 
 /*.footer {
@@ -108,12 +108,16 @@ input:checked+label{color:#555;border:1px solid #ddd;border-top:3px solid #2980b
   padding: 5px;
 }
 
+.input.show.year {
+  width: 10%;
+}
+
 .input.show.information {
-  width: 50%;
+  width: 45%;
 }
 
 .input.show.link {
-  width: 40%;
+  width: 35%;
 }
 
 .input.show.button {

@@ -21,23 +21,28 @@ html(lang="en")
     part#content1
       div.topic Internships
       div.wrapper
-        div#admin
-          input.input.show.information(type='text', placeholder='ข่าวสารข้อมูล...')
-          input.input.show.link(type='text', placeholder='ลิงค์เว็บไซต์...')
-          button.input.show.button เพิ่ม
-          br
+        if admin_session
+          div#admin
+            div 
+              a(href="/logout") logout
+            input.input.show.year(type='text', placeholder='2560...')
+            input.input.show.information(type='text', placeholder='ข่าวสารข้อมูล...')
+            input.input.show.link(type='text', placeholder='ลิงค์เว็บไซต์...')
+            button.input.show.button เพิ่ม
+            br
         div.table
           div.row.header.blue
             div.cell.center ข่าวสารข้อมูล
             div.cell.link.center link
-            div.cell.delete#admin id
+            if admin_session
+              div.cell.delete#admin id
           div.row
             div.cell 1
             div.cell
               button.btn.link
                 a(href='#') click
-            div.cell.btn.delete#admin
-              button click
+            if admin_session
+              div.cell.btn.delete#admin X
         div.listyear ปีการศึกษา
           ul
             li
@@ -111,6 +116,7 @@ html(lang="en")
       div.topic Places internships
       div.wrapper
         div#admin
+          input.input.show.year(type='text', placeholder='2560...')
           input.input.show.information(type='text', placeholder='สถานที่ฝึกงาน...')
           input.input.show.link(type='text', placeholder='ลิงค์เว็บไซต์...')
           button.input.show.button เพิ่ม
@@ -124,8 +130,7 @@ html(lang="en")
             div.cell
               button.btn.link
                 a(href='#') click
-            div.cell.btn.delete#admin
-              button click
+            div.cell.btn.delete#admin X
         div.listyear ปีการศึกษา
           ul
             li
