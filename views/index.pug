@@ -1,7 +1,7 @@
 html(lang="en")
   head
     title= upload
-    meta(name='viewport', content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;')
+    //- meta(name='viewport', content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;')
     link(rel='stylesheet', href='/stylesheets/index.css')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
@@ -9,6 +9,7 @@ html(lang="en")
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
     script(src='https://code.jquery.com/jquery-2.2.0.min.js')
     script(src='https://code.jquery.com/jquery-1.12.0.min.js')
+    script(src='/javascripts/index.js')
   body
     input#tab1(type='radio', name='tabs', checked)
     label(for='tab1') HOME PAGE
@@ -25,73 +26,79 @@ html(lang="en")
           div#admin
             div 
               a(href="/logout") logout
-            input.input.show.year(type='text', placeholder='2560...')
-            input.input.show.information(type='text', placeholder='ข่าวสารข้อมูล...')
-            input.input.show.link(type='text', placeholder='ลิงค์เว็บไซต์...')
-            button.input.show.button เพิ่ม
+            input.input.show.year#addnewsYear(type='text', placeholder='2560...')
+            input.input.show.information#addnewsName(type='text', placeholder='ข่าวสารข้อมูล...')
+            input.input.show.link#addnewsLink(type='text', placeholder='ลิงค์เว็บไซต์...')
+            button.input.show.button#addnewsButton เพิ่ม
             br
-        div.table
+        div.table#news
           div.row.header.blue
             div.cell.center ข่าวสารข้อมูล
             div.cell.link.center link
             if admin_session
-              div.cell.delete#admin id
-          div.row
-            div.cell 1
-            div.cell
-              button.btn.link
-                a(href='#') click
-            if admin_session
-              div.cell.btn.delete#admin X
-        div.listyear ปีการศึกษา
-          ul
-            li
-              a(href='#') 2557
-            li
-              a(href='#') 2558 
+              div.cell.delete#admin
+          //- div.row
+          //-   div.cell 1
+          //-   div.cell
+          //-     button.btn.link
+          //-       a(href='#') click
+          //-   if admin_session
+          //-     div.cell.btn.delete#admin X
+        //- div.listyear ปีการศึกษา
+        //-   ul
+        //-     li
+        //-       a(href='#') 2557
+        //-     li
+        //-       a(href='#') 2558 
     part#content2
       div.topic Computer Engineering
       div.wrapper
-        div#admin
-          input.input.show.cpe(type='text', value='CPE', readonly)
-          input.input.show.year(type='text', placeholder='2560...')
-          input.input.show.choosefile#file-cpe(type='file', name='file', )
-          button.input.show.upload upload
-        div.table
+        if admin_session
+          div#admin
+            div
+              a(href="/logout") logout
+            input.input.show.cpe#addcpeName(type='text', value='CPE', readonly)
+            input.input.show.year#addcpeYear(type='text', placeholder='2560...')
+            input.input.show.choosefile#file-cpe(type='file', name='file')
+            //- button.input.show.upload#addcpeButton upload
+        div.table#cpe
           div.row.header.blue
             div.cell.center รหัสนิสิต
             div.cell.center ชื่อ-นามสกุล
             div.cell.center สถานประกอบการ
             div.cell.center วันเริ่มงาน
             div.cell.center วันสิ้นสุดงาน
-          div.row
-            div.cell a1
-            div.cell a2
-            div.cell a3
-            div.cell a4
-            div.cell a5
-          div.row
-            div.cell a1
-            div.cell a2
-            div.cell a3
-            div.cell a4
-            div.cell a5
+            if admin_session
+              div.cell.delete#admin id
+          //- div.row
+          //-   div.cell a1
+          //-   div.cell a2
+          //-   div.cell a3
+          //-   div.cell a4
+          //-   div.cell a5
+          //- div.row
+          //-   div.cell a1
+          //-   div.cell a2
+          //-   div.cell a3
+          //-   div.cell a4
+          //-   div.cell a5
         //- br
-        div.listyear ปีการศึกษา
-          ul
-            li
-              a(href='#') 2557
-            li
-              a(href='#') 2558 
+        //- div.listyear ปีการศึกษา
+        //-   ul
+        //-     li
+        //-       a(href='#') 2557
+        //-     li
+        //-       a(href='#') 2558 
           
     part#content3
       div.topic Software engineering
       div.wrapper
-        div#admin
-          input.input.show.ske(type='text', value='SKE', readonly)
-          input.input.show.year(type='text', placeholder='2560...')
-          input.input.show.choosefile#file-cpe(type='file', name='file', )
-          button.input.show.upload upload
+        if admin_session
+          div#admin
+            input.input.show.ske(type='text', value='SKE', readonly)
+            input.input.show.year(type='text', placeholder='2560...')
+            input.input.show.choosefile#file-cpe(type='file', name='file', )
+            button.input.show.upload upload
         div.table
           div.row.header.blue
             div.cell.center รหัสนิสิต
@@ -106,36 +113,43 @@ html(lang="en")
           //-   div.cell a4
           //-   div.cell a5
         //- br
-        div.listyear ปีการศึกษา
-          ul
-            li
-              a(href='#') 2557
-            li
-              a(href='#') 2558
+        //- div.listyear ปีการศึกษา
+        //-   ul
+        //-     li
+        //-       a(href='#') 2557
+        //-     li
+        //-       a(href='#') 2558
     part#content4
       div.topic Places internships
       div.wrapper
-        div#admin
-          input.input.show.year(type='text', placeholder='2560...')
-          input.input.show.information(type='text', placeholder='สถานที่ฝึกงาน...')
-          input.input.show.link(type='text', placeholder='ลิงค์เว็บไซต์...')
-          button.input.show.button เพิ่ม
-        div.table
+        if admin_session
+          div#admin
+            div
+              a(fref="/logout") logout
+            input.input.show.year#addplacesYear(type='text', placeholder='2560...')
+            input.input.show.information#addplacesName(type='text', placeholder='สถานที่ฝึกงาน...')
+            input.input.show.link#addplacesLink(type='text', placeholder='ลิงค์เว็บไซต์...')
+            button.input.show.button#addplacesButton เพิ่ม
+        div.table#places
           div.row.header.blue
             div.cell.center ชื่อสถานที่ฝึกงาน
             div.cell.link.center link
-            div.cell.delete#admin id
-          div.row
-            div.cell 1
-            div.cell
-              button.btn.link
-                a(href='#') click
-            div.cell.btn.delete#admin X
-        div.listyear ปีการศึกษา
-          ul
-            li
-              a(href='#') 2557
-            li
-              a(href='#') 2558 
+            if admin_session
+              div.cell.delete#admin
+        //-   div.row
+        //-     div.cell 1
+        //-     div.cell
+        //-       button.btn.link
+        //-         a(href='#') click
+        //-     if admin_session
+        //-       div.cell.btn.delete#admin X
+        //- div.listyear ปีการศึกษา
+        //-   ul
+        //-     li
+        //-       a(href='#') 2557
+        //-     li
+        //-       a(href='#') 2558 
                 
     div.footer
+    script.
+      const admin_session = #{admin_session ? true : false};
