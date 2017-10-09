@@ -95,17 +95,19 @@ html(lang="en")
       div.wrapper
         if admin_session
           div#admin
-            input.input.show.ske(type='text', value='SKE', readonly)
-            input.input.show.year(type='text', placeholder='2560...')
-            input.input.show.choosefile#file-cpe(type='file', name='file', )
-            button.input.show.upload upload
-        div.table
+            input.input.show.ske#addskeName(type='text', value='SKE', readonly)
+            input.input.show.year#addskeYear(type='text', placeholder='2560...')
+            input.input.show.choosefile#file-ske(type='file', name='file', )
+            //- button.input.show.upload upload
+        div.table#ske
           div.row.header.blue
             div.cell.center รหัสนิสิต
             div.cell.center ชื่อ-นามสกุล
             div.cell.center สถานประกอบการ
             div.cell.center วันเริ่มงาน
             div.cell.center วันสิ้นสุดงาน
+            if admin_session
+              div.cell.delete#admin id
           //- div.row
           //-   div.cell a1
           //-   div.cell a2
@@ -134,8 +136,8 @@ html(lang="en")
           div.row.header.blue
             div.cell.center ชื่อสถานที่ฝึกงาน
             div.cell.link.center link
-            //- if admin_session
-            //-   div.cell.delete#admin
+            if admin_session
+              div.cell.delete#admin X
         //-   div.row
         //-     div.cell 1
         //-     div.cell
