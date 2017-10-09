@@ -12,7 +12,6 @@ function getNews(news) {
   $.get('/api/shownews', function(data){
     news.find('.row:not(.header)').remove();
     $.each(data, function(i, item) {
-      console.log(item)
       news.append('<div class="row" item_id="' + item._id + '"><div class="cell">'+item.name+'</div><div class="cell"><button class="btn link"><a href="'+item.link+'" target="_blank">click</a></button></div>' + (admin_session ? '<div class="cell btn delete" id="admin">X</div>' : '') + '</div>');
     });
     bindDeleteNews(news);
@@ -23,7 +22,6 @@ function bindDeletePlaces(places) {
   $('#content4 .btn.delete').click(function() {
     var item_id = $(this).closest('.row').attr('item_id');
     $.post('/api/deleteplaces', {_id: item_id}, function(data){
-      console.log(data);
       getPlaces(places);
     });
 
@@ -34,7 +32,6 @@ function getPlaces(places) {
   $.get('/api/showplaces', function(data){
     places.find('.row:not(.header)').remove();
     $.each(data, function(i, item) {
-      console.log(item)
       places.append('<div class="row" item_id="' + item._id + '"><div class="cell">'+item.name+'</div><div class="cell"><button class="btn link"><a href="'+item.link+'" target="_blank">click</a></button></div>' + (admin_session ? '<div class="cell btn delete" id="admin">X</div>' : '') + '</div>');
     });
     bindDeletePlaces(places);
@@ -70,6 +67,7 @@ $(document).ready(function(){
         addplacesYear.val("");
         addplacesName.val("");
         addplacesLink.val("");
+        getPlaces(places);
       }
     });
   })
@@ -81,36 +79,48 @@ $(document).ready(function(){
   var cpe = $('#cpe');
 
   document.getElementById('file-cpe').onchange = function(){
-    var file = this.files[0];
-    var reader = new FileReader();
-    reader.onload = function(progressEvent){
-      var lines = this.result.split('\n');
-      for(var line = 0; line < lines.length; line++){
-        var check = lines[line].split(",");
-        console.log(check[0]+check[1]);
-      }
-    };
-    reader.readAsText(file);
+    if( addcpeYear.val().length == 4){
+      var file = this.files[0];
+      var reader = new FileReader();
+      reader.onload = function(progressEvent){
+        var lines = this.result.split('\n');
+        for(var line = 0; line < lines.length; line++){
+          var check = lines[line].split(",");
+          if(check.length < 5)
+            break;
+          console.log(check[0]+check[1]+check[2]+check[3]+check[4]);
+          cpe.append('<div class="row"><div class="cell">'+check[0]+'</div><div class="cell">'+check[1]+'</div><div class="cell">'+check[2]+'</div><div class="cell">'+check[3]+'</div><div class="cell">'+check[4]+'</div></div>');
+        }
+      };
+      reader.readAsText(file);
+    } else {
+      alert('4 digits for year');
+    }
+
   };
 
   var fileske = $('#file-ske');
   var addskeYear = $('#addskeYear');
   var addskeName = $('#addskeName');
   var ske = $('#ske');
-
   document.getElementById('file-ske').onchange = function(){
-    var file = this.files[0];
-    var reader = new FileReader();
-    reader.onload = function(progressEvent){
-      var lines = this.result.split('\n');
-      for(var line = 0; line < lines.length; line++){
-        var check = lines[line].split(",");
-        if(check.length < 5)
-          break;
-        console.log(check[0]+check[1]);
-      }
-    };
-    reader.readAsText(file);
+    if( addskeYear.val().length == 4){
+      var file = this.files[0];
+      var reader = new FileReader();
+      reader.onload = function(progressEvent){
+        var lines = this.result.split('\n');
+        for(var line = 0; line < lines.length; line++){
+          var check = lines[line].split(",");
+          if(check.length < 5)
+            continue;
+          console.log(check[0]+check[1]+check[2]+check[3]+check[4]);
+          ske.append('<div class="row"><div class="cell">'+check[0]+'</div><div class="cell">'+check[1]+'</div><div class="cell">'+check[2]+'</div><div class="cell">'+check[3]+'</div><div class="cell">'+check[4]+'</div></div>');
+        }
+      };
+      reader.readAsText(file);
+    } else {
+      alert('4 digits for year');
+    }
   };
 
 });

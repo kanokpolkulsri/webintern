@@ -19,13 +19,14 @@ html(lang="en")
     label(for='tab3') Software Engineering
     input#tab4(type='radio', name='tabs')
     label(for='tab4') Places Internships
+    if admin_session
+      div.btn-logout
+        a(href="/logout") logout
     part#content1
       div.topic Internships
       div.wrapper
         if admin_session
           div#admin
-            div 
-              a(href="/logout") logout
             input.input.show.year#addnewsYear(type='text', placeholder='2560...')
             input.input.show.information#addnewsName(type='text', placeholder='ข่าวสารข้อมูล...')
             input.input.show.link#addnewsLink(type='text', placeholder='ลิงค์เว็บไซต์...')
@@ -55,8 +56,6 @@ html(lang="en")
       div.wrapper
         if admin_session
           div#admin
-            div
-              a(href="/logout") logout
             input.input.show.cpe#addcpeName(type='text', value='CPE', readonly)
             input.input.show.year#addcpeYear(type='text', placeholder='2560...')
             input.input.show.choosefile#file-cpe(type='file', name='file')
@@ -70,12 +69,6 @@ html(lang="en")
             div.cell.center วันสิ้นสุดงาน
             if admin_session
               div.cell.delete#admin id
-          //- div.row
-          //-   div.cell a1
-          //-   div.cell a2
-          //-   div.cell a3
-          //-   div.cell a4
-          //-   div.cell a5
           //- div.row
           //-   div.cell a1
           //-   div.cell a2
@@ -126,8 +119,6 @@ html(lang="en")
       div.wrapper
         if admin_session
           div#admin
-            div
-              a(fref="/logout") logout
             input.input.show.year#addplacesYear(type='text', placeholder='2560...')
             input.input.show.information#addplacesName(type='text', placeholder='สถานที่ฝึกงาน...')
             input.input.show.link#addplacesLink(type='text', placeholder='ลิงค์เว็บไซต์...')
